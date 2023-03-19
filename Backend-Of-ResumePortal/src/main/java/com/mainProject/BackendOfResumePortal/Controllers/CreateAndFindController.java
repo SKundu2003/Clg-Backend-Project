@@ -8,11 +8,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
+@CrossOrigin
 public class CreateAndFindController {
     @Autowired
     UserReposetory userReposetory;
     @PostMapping("/createUser")//creating the new user with all details
-    public String createNewUser(@RequestBody UserLoginDetails userDetails)//change kora "AllDetailsOfUser" hoba -->for me
+    public String createNewUser(@RequestBody AllDetailsOfUser userDetails)//change kora "AllDetailsOfUser" hoba -->for me
     {
         if(userReposetory.findByUniversityRoll(userDetails.getUniversityRoll())!=null)
         {

@@ -8,6 +8,7 @@ import org.springframework.security.config.annotation.authentication.builders.Au
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.NoOpPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
@@ -25,7 +26,7 @@ public class SecuityConfigurations extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http
-                .csrf().disable()//this is most import with out this PostMan cant send request
+//                .csrf().disable()//this is most import with out this PostMan cant send request
                 .httpBasic()//this tag will remove the HTMl page //helps to see from postman
                 .and()
                 .authorizeRequests()
@@ -39,6 +40,6 @@ public class SecuityConfigurations extends WebSecurityConfigurerAdapter {
     @Bean
     public PasswordEncoder getPasswordEncoder()
     {
-        return NoOpPasswordEncoder.getInstance();//to set no password encoding
+        return new BCryptPasswordEncoder();//to set no password encoding
     }
 }
