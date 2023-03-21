@@ -2,20 +2,20 @@ package com.mainProject.BackendOfResumePortal.Controllers;
 
 
 import com.mainProject.BackendOfResumePortal.Modules.AllDetailsOfUser;
-import com.mainProject.BackendOfResumePortal.PJO.UserLoginDetails;
 import com.mainProject.BackendOfResumePortal.Repo.UserReposetory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@CrossOrigin
+@CrossOrigin(origins = "*", allowedHeaders = "*")
 public class CreateAndFindController {
     @Autowired
     UserReposetory userReposetory;
+    @CrossOrigin
     @PostMapping("/createUser")//creating the new user with all details
     public String createNewUser(@RequestBody AllDetailsOfUser userDetails)//change kora "AllDetailsOfUser" hoba -->for me
     {
-        if(userReposetory.findByUniversityRoll(userDetails.getUniversityRoll())!=null)
+        if(userReposetory.findByEmail(userDetails.getUniversityRoll())!=null)
         {
             //if user exist then
             return"UserAlready exist";
@@ -33,10 +33,11 @@ public class CreateAndFindController {
 
     //Show user Details
     //show data is accessable for all
+    @CrossOrigin
     @GetMapping("/user/{id}")
     public AllDetailsOfUser showAllDataOfAUser(@PathVariable String id)
     {
-        return userReposetory.findByUniversityRoll(id);
+        return userReposetory.findByEmail(id);
     }
 
 }

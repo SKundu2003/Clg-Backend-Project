@@ -14,7 +14,7 @@ public class UserService implements UserDetailsService {
     @Autowired
     UserReposetory userReposetory;
     @Override
-    public AllDetailsOfUser loadUserByUsername(String URoll) throws UsernameNotFoundException {
-        return userReposetory.findByUniversityRoll(URoll);
+    public AllDetailsOfUser loadUserByUsername(String Email) throws UsernameNotFoundException {
+        return userReposetory.findByEmail(Email);
     }
 }

@@ -26,7 +26,8 @@ public class SecuityConfigurations extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http
-//                .csrf().disable()//this is most import with out this PostMan cant send request
+                .cors().disable()
+                .csrf().disable()//this is most import with out this PostMan cant send request
                 .httpBasic()//this tag will remove the HTMl page //helps to see from postman
                 .and()
                 .authorizeRequests()

@@ -6,6 +6,6 @@ import org.springframework.data.mongodb.repository.MongoRepository;
 
 @Configuration
 public interface UserReposetory extends MongoRepository<AllDetailsOfUser, Integer> {
-    public AllDetailsOfUser findByUniversityRoll(String universityRoll);
-    public void deleteByUniversityRoll(String univercityRoll);
+    public AllDetailsOfUser findByEmail(String universityRoll);
+    public void deleteByEmail(String univercityRoll);
 }
