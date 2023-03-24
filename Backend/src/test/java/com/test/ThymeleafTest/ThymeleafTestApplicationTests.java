@@ -1,10 +1,10 @@
-package com.mainProject.BackendOfResumePortal;
+package com.test.ThymeleafTest;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class BackendOfResumePortalApplicationTests {
+class ThymeleafTestApplicationTests {
 
 	@Test
 	void contextLoads() {

@@ -1,7 +1,7 @@
-package com.mainProject.BackendOfResumePortal.MyUserDetailService;
+package com.test.ThymeleafTest.MyUserDetailService;
 
-import com.mainProject.BackendOfResumePortal.Modules.AllDetailsOfUser;
-import com.mainProject.BackendOfResumePortal.Repo.UserReposetory;
+import com.test.ThymeleafTest.Modules.AllDetailsOfUser;
+import com.test.ThymeleafTest.Repo.UserReposetory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
@@ -15,6 +15,11 @@ public class UserService implements UserDetailsService {
     UserReposetory userReposetory;
     @Override
     public AllDetailsOfUser loadUserByUsername(String Email) throws UsernameNotFoundException {
+        if(userReposetory.findByEmail(Email)==null)
+        {
+            System.out.println("user not available");
+            return new AllDetailsOfUser();
+        }
         return userReposetory.findByEmail(Email);
     }
 }

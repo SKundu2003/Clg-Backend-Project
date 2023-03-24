@@ -1,6 +1,6 @@
-package com.mainProject.BackendOfResumePortal.Configurations;
+package com.test.ThymeleafTest.Configurations;
 
-import com.mainProject.BackendOfResumePortal.MyUserDetailService.UserService;
+import com.test.ThymeleafTest.MyUserDetailService.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -35,12 +35,16 @@ public class SecuityConfigurations extends WebSecurityConfigurerAdapter {
                 .antMatchers("/user/**").permitAll()
                 .antMatchers("/update/**").authenticated()
                 .and()
-                .formLogin(); //to show the login window
+                .formLogin()//to show the default login window
+                .defaultSuccessUrl("/user/test",true)
+                .permitAll()
+                .and()
+                .logout().permitAll();
     }
 
     @Bean
     public PasswordEncoder getPasswordEncoder()
     {
-        return new BCryptPasswordEncoder();//to set no password encoding
+        return NoOpPasswordEncoder.getInstance();//to set no password encoding
     }
 }
