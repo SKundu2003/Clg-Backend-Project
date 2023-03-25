@@ -110,12 +110,12 @@
                 const email = document.getElementById('email').value;
                 const number = document.getElementById('number').value;
                 const address = document.getElementById('address').value;
-                const education1 = document.getElementById('education1').value;
-                const education2 = document.getElementById('education2').value;
-                const experience1 = document.getElementById('experience1').value;
-                const experience1_about = document.getElementById('experience1_about').value;
-                const experience2 = document.getElementById('experience2').value;
-                const experience2_about = document.getElementById('experience2_about').value;
+                const education_school1 = document.getElementById('education1').value;
+                const education_school2 = document.getElementById('education2').value;
+                const experience1_title = document.getElementById('experience1').value;
+                const about_experience1 = document.getElementById('experience1_about').value;
+                const experience2_title = document.getElementById('experience2').value;
+                const about_experience2 = document.getElementById('experience2_about').value;
                 const skills = document.getElementById('skills').value;
                 const password = document.getElementById('password').value;
 
@@ -127,18 +127,19 @@
                     email: email,
                     number: number,
                     address: address,
-                    education_school1: education1,
-                    education_school2: education2,
-                    experience1_title: experience1,
-                    about_experience1: experience1_about,
-                    experience2_title: experience2,
-                    about_experience2: experience2_about,
+                    education_school1: education_school1,
+                    education_school2: education_school2,
+                    experience1_title: experience1_title,
+                    about_experience1: about_experience1,
+                    experience2_title: experience2_title,
+                    about_experience2: about_experience2,
                     skills: skills,
                     password: password
                 };
                 console.log(AllDetailsOfUser)
                 // Send data to API endpoint
-                fetch('http://localhost:8080/createUser', {
+                fetch('http://20.62.69.111:8080/createUser', {
+
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json'
