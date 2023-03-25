@@ -1,0 +1,24 @@
+<html>
+
+<head>
+    <title>Access point</title>
+    <script>
+        function storeData() {
+            // get the user input
+            var userInput = document.getElementById("userInput").value;
+            // store the user input in localStorage
+            localStorage.setItem("userData", userInput);
+            // redirect to page 2
+            window.location.href = "MainResumeView.html";
+        }
+    </script>
+</head>
+
+<body>
+    <h1>Find your Account::</h1>
+    <label for="userInput">Enter Your Email</label>
+    <input type="text" id="userInput">
+    <button onclick="storeData()">Search</button>
+</body>
+
+</html>

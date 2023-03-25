@@ -1,6 +1,5 @@
 package com.test.ThymeleafTest.Modules;
 
-import com.test.ThymeleafTest.PJO.UserDetails_PJO;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.Field;
@@ -69,12 +68,12 @@ public class AllDetailsOfUser implements UserDetails {
         this.email = email;
     }
 
-    public String getPhoneNumber() {
+    public String getNumber() {
         return number;
     }
 
-    public void setPhoneNumber(String phoneNumber) {
-        number = phoneNumber;
+    public void setNumber(String number) {
+        this.number = number;
     }
 
 

@@ -1,0 +1,105 @@
+<html>
+
+<head>
+    <title>Welcome</title>
+    <style>
+        /* Center the buttons */
+        .button-container {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        /* Style the buttons */
+        button {
+            padding: 10px 20px;
+            font-size: 18px;
+            margin: 0 10px;
+            background-color: #ea1185;
+            border: none;
+            color: white;
+            transition: background-color 0.5s;
+        }
+
+        button:hover {
+            background-color: #dd5510;
+        }
+
+        button:active {
+            animation: click 0.1s;
+        }
+
+        @keyframes click {
+            from {
+                transform: scale(1);
+            }
+
+            to {
+                transform: scale(0.95);
+            }
+        }
+
+        /* Center the page content */
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            min-height: 100vh;
+            margin: 0;
+            background-image: url("wlcmbg.png");
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        /* Style the welcome message */
+        .welcome {
+            position: absolute;
+            top: 20%;
+            left: 30%;
+            transform: translate(-50%, -50%);
+            font-size: 30px;
+            color: #ecd209;
+            text-align: center;
+            font-family: "Freestyle Script", cursive;
+            animation-name: welcomeAnimation;
+            animation-duration: 10s;
+            animation-iteration-count: infinite;
+            z-index: 1;
+        }
+
+        @keyframes welcomeAnimation {
+            0% {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+
+            50% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+
+            100% {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+        }
+    </style>
+</head>
+
+<body background="wlcmbg.png">
+    <div class="welcome">Ready to make a lasting impression? Our online Resume builder
+        is here to help </div>
+
+    <p style="text-align: center; color: white;">
+        Are you an existing user? If yes, click on the login button. Otherwise,
+        click on the signup button
+    </p>
+
+
+    <div class="button-container">
+        <button onclick="window.location.href='FindUser.html'">Find your account</button>
+        <button onclick="window.location.href='CreateUser.html'">Sign up</button>
+    </div>
+</body>
+
+</html>

@@ -33,10 +33,10 @@ public class SecuityConfigurations extends WebSecurityConfigurerAdapter {
                 .authorizeRequests()
                 .antMatchers("/createUser").permitAll()
                 .antMatchers("/user/**").permitAll()
-                .antMatchers("/update/**").authenticated()
+                .antMatchers("/update/**").permitAll()
                 .and()
                 .formLogin()//to show the default login window
-                .defaultSuccessUrl("/user/test",true)
+                .defaultSuccessUrl("http://127.0.0.1:5500/update_data.html",true)
                 .permitAll()
                 .and()
                 .logout().permitAll();

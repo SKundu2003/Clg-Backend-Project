@@ -18,12 +18,11 @@ public class UpdateColtroller {
 
     //only if authenticated then only user can update data
     @CrossOrigin
-    @PostMapping("/update/{id}")
-    public ResponseEntity<?> showAllDataOfAUser(@PathVariable String id, @RequestBody AllDetailsOfUser allDetailsOfUser)
+    @PostMapping("/update/{email}")
+    public ResponseEntity<?> showAllDataOfAUser(@PathVariable String email, @RequestBody AllDetailsOfUser allDetailsOfUser)
     {
-
-        userReposetory.deleteByEmail(id);
+        userReposetory.deleteByEmail(email);
         userReposetory.save(allDetailsOfUser);
-        return ResponseEntity.status(HttpStatus.OK).build();
+        return ResponseEntity.ok().build();
     }
 }
