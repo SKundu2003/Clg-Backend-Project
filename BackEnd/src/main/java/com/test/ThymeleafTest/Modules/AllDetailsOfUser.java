@@ -13,25 +13,25 @@ import java.util.Collection;
 
 @Document
 public class AllDetailsOfUser implements UserDetails {
-    private String about;
-    private String name;
-    private String email;
+    public String about;
+    public String name;
+    public String email;
 
-    private String number;
-    private String address;
-    private String education_school1; //collage name
+    public String number;
+    public String address;
+    public String education_school1; //collage name
 
-    private String education_school2; //school name
+    public String education_school2; //school name
 
-    private String experience1_title;//title of 1st experience
+    public String experience1_title;//title of 1st experience
 
-    private String about_experience1;
+    public String about_experience1;
 
-    private String experience2_title;//title of 2nd experience
+    public String experience2_title;//title of 2nd experience
 
-    private String about_experience2;
-    private String skills;
-    private String password;
+    public String about_experience2;
+    public String skills;
+    public String password;
 
     public AllDetailsOfUser(String about, String name, String email, String number, String address, String education_school1, String education_school2, String experience1_title, String about_experience1, String experience2_title, String about_experience2, String skills, String password) {
         this.about = about;

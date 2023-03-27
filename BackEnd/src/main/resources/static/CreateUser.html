@@ -100,6 +100,7 @@
 
             <button type="button" onclick="createJSON()">Submit</button>
         </form>
+        <button onclick="goToIndex()">Go back to index page</button>
     </div>
     <script>
         function createJSON() {
@@ -138,7 +139,7 @@
                 };
                 console.log(AllDetailsOfUser)
                 // Send data to API endpoint
-                fetch('http://20.62.69.111:8080/createUser', {
+                fetch('http://localhost:8080/createUser', {
 
                     method: 'POST',
                     headers: {
@@ -153,12 +154,15 @@
                         throw new Error('Network response was not ok');
                     }
                     console.log('User created successfully');
+                    alert("user created Successfully now go and see your resume")
                 })
             } catch (error) {
                 console.error('There was a problem with the createJSON function:', error);
             }
         }
-
+        function goToIndex(){
+            window.location.href="../index.html";
+        }
     </script>
 
 </body>

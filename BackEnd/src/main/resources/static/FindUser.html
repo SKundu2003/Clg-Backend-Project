@@ -1,24 +1,24 @@
 <html>
 
 <head>
-    <title>Access point</title>
-    <script>
-        function storeData() {
-            // get the user input
-            var userInput = document.getElementById("userInput").value;
-            // store the user input in localStorage
-            localStorage.setItem("userData", userInput);
-            // redirect to page 2
-            window.location.href = "MainResumeView.html";
-        }
-    </script>
+    <title>Find Your Resume</title>
 </head>
 
 <body>
     <h1>Find your Account::</h1>
-    <label for="userInput">Enter Your Email</label>
-    <input type="text" id="userInput">
-    <button onclick="storeData()">Search</button>
+    <label for="inputString">Enter your email:</label>
+    <input type="text" id="inputString"><br><br>
+    <button onclick="sendData()">Find</button><br><br>
+    <div id="result"></div>
+
+    <script>
+        function sendData(){
+            let email = document.getElementById("inputString").value;
+            window.location.href = `http://localhost:8080/user/${email}`;
+            //storing the data inside the local storage
+            localStorage.setItem("userData",email);
+        }
+    </script>
 </body>
 
 </html>

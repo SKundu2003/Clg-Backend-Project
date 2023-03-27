@@ -5,8 +5,48 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+
+    <!-- Adding some CSS for the animation -->
+    <style>
+        button {
+            background-color: #1E90FF;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            border-radius: 4px;
+            transition: all 0.2s ease-in-out;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #4682B4;
+        }
+
+        button:active {
+            transform: scale(0.95);
+        }
+    </style>
 </head>
+
 <body>
-    <button><a href="http://20.62.69.111:8080/login">press here</a></button>
+<center>
+<button onclick="animateButton()">
+    LogIn
+</button>
+</center>
+
+<!-- Adding some JavaScript for the animation -->
+<script>
+    function animateButton() {
+        var button = document.querySelector("button");
+        button.classList.add("animate__animated", "animate__bounce");
+
+        window.location.href = "http://localhost:8080/login";
+    }
+</script>
+
+<!-- Adding the animation library from animate.css -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
 </body>
 </html>

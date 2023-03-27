@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @CrossOrigin(origins = "*", allowedHeaders = "*")
-public class CreateAndFindController {
+public class CreateController {
 
     @Autowired
     UserReposetory userReposetory;
@@ -33,10 +33,4 @@ public class CreateAndFindController {
 
     //Show user Details
     //show data is accessable for all
-    @CrossOrigin
-    @GetMapping("/user/{email}")
-    public AllDetailsOfUser showAllDataOfAUser(@PathVariable String email)
-    {
-        return userReposetory.findByEmail(email);
-    }
 }

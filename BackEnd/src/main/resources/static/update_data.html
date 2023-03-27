@@ -99,14 +99,18 @@
 
             <button type="submit" onclick="createJSON()">Submit</button>
         </form>
+        <br>
+        <br>
+        <h3>
+            <button onclick="goBackToMainView()">Go back to your resume</button>
+        </h3>
     </div>
     <script>
-        function fetchData() {
-            var userData = localStorage.getItem("userData");
-            // display the user input on the page
-            var email = userData;
+        let userData = localStorage.getItem("userData");
 
-            fetch(`http://20.62.69.111:8080/user/${email}`)
+        function fetchData() {
+            // display the user input on the page
+            fetch(`http://localhost:8080/json/user/${userData}`)
                 .then(response => response.json())
                 .then(data => {
                     document.getElementById('name').value = data.name;
@@ -168,7 +172,7 @@
                 console.log(AllDetailsOfUser);
 
                 // Send data to API endpoint
-                fetch(`http://20.62.69.111:8080/update/${email}`, {
+                fetch(`http://localhost:8080/update/${email}`, {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json'
@@ -188,8 +192,10 @@
                 console.error('There was a problem with the createJSON function:', error);
             }
         }
+        function goBackToMainView(){
+            window.location.href=`http://localhost:8080/user/${userData}`;
+        }
     </script>
-        <h1><button><a href="MainResumeView.html">Go back to your account</a></button></h1>
 
 </body>
 

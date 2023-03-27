@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>MainResumeView</title>
+    <style>
+        body {
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        .container {
+            width: 80%;
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: #f8f8f8;
+            border: 1px solid #ccc;
+            padding: 50px;
+            border-radius: 5px;
+            color: #333;
+            position: relative;
+            animation: floatIn 1s forwards ease-in-out;
+        }
+
+        @keyframes floatIn {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        p {
+            font-size: 18px;
+            line-height: 1.5;
+        }
+
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        li:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+            transition: all 0.1s cubic-bezier(0.5, 0, 0.5, 1);
+            background: linear-gradient(to bottom, #ff0066, #ff9900);
+        }
+
+
+        @media (max-width: 768px) {
+            .container {
+                width: 100%;
+                padding: 10px;
+            }
+        }
+
+        .resume {
+            margin: 0 auto;
+            max-width: 250px;
+            text-align: center;
+            border: 1px solid #000000;
+            padding: 1px;
+            border-radius: 10px;
+        }
+    </style>
+
+
+</head>
+
+<body>
+<div class="container">
+    <h1><span th:text="${user.name}"></span></h1>
+    <h3>
+        <span th:text="${user.about}">my about</span>
+    </h3>
+    <hr>
+    <h2>Personal Information</h2>
+    <ul>
+        <li>Name: <span th:text="${user.name}"></span></li>
+        <li>Email: <span th:text="${user.email}"></span></li>
+        <li>Phone: <span th:text="${user.number}"></span></li>
+        <li>Address: <span th:text="${user.address}"></span></li>
+    </ul>
+    <hr>
+    <h2>Education</h2>
+    <ul>
+        <li><span th:text="${user.education_school1}"></span></li>
+        <li><span th:text="${user.education_school2}"></span></li>
+    </ul>
+    <hr>
+    <h2>Experience</h2>
+    <ul>
+        <li><span th:text="${user.experience1_title}"></span></li>
+        <p><span th:text="${user.about_experience1}"></span></p>
+
+        <li><span th:text="${user.experience2_title}"></span></li>
+        <p><span th:text="${user.about_experience2}"></span></p>
+    </ul>
+    <hr>
+    <h2>Skills</h2>
+    <h4>
+        <span th:text="${user.skills}"></span>
+    </h4>
+</div>
+
+<h2><button><a href="../SendToLogin.html">Update user info</a></button></h2>
+</body>
+
+</html>

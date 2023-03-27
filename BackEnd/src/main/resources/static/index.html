@@ -1,105 +1,138 @@
+<!DOCTYPE html>
 <html>
 
 <head>
-    <title>Welcome</title>
+    <title>My Website</title>
     <style>
-        /* Center the buttons */
-        .button-container {
-            display: flex;
-            justify-content: center;
-            margin-bottom: 20px;
-        }
-
-        /* Style the buttons */
-        button {
-            padding: 10px 20px;
-            font-size: 18px;
-            margin: 0 10px;
-            background-color: #ea1185;
-            border: none;
-            color: white;
-            transition: background-color 0.5s;
-        }
-
-        button:hover {
-            background-color: #dd5510;
-        }
-
-        button:active {
-            animation: click 0.1s;
-        }
-
-        @keyframes click {
-            from {
-                transform: scale(1);
-            }
-
-            to {
-                transform: scale(0.95);
-            }
-        }
-
-        /* Center the page content */
         body {
-            display: flex;
-            flex-direction: column;
-            justify-content: flex-start;
-            min-height: 100vh;
-            margin: 0;
-            background-image: url("wlcmbg.png");
+            background: url("https://cdn.pixabay.com/photo/2017/08/30/01/05/milky-way-2695569_1280.jpg");
             background-repeat: no-repeat;
             background-size: cover;
+            font-family: Arial, sans-serif;
         }
 
-        /* Style the welcome message */
-        .welcome {
-            position: absolute;
-            top: 20%;
-            left: 30%;
-            transform: translate(-50%, -50%);
-            font-size: 30px;
-            color: #ecd209;
-            text-align: center;
-            font-family: "Freestyle Script", cursive;
-            animation-name: welcomeAnimation;
-            animation-duration: 10s;
-            animation-iteration-count: infinite;
-            z-index: 1;
-        }
-
-        @keyframes welcomeAnimation {
+        @keyframes gradient {
             0% {
-                opacity: 0;
-                transform: translateY(-50px);
+                background-position: 0% 50%;
             }
 
             50% {
-                opacity: 1;
-                transform: translateY(0);
+                background-position: 100% 50%;
             }
 
             100% {
-                opacity: 0;
-                transform: translateY(50px);
+                background-position: 0% 50%;
             }
+        }
+
+        /* Updated styles */
+
+        .frame {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background-color: rgba(255, 255, 255, 0.9);
+            /* Use a semi-transparent white background to make the content more readable */
+            border-radius: 10px;
+            padding: 40px 30px;
+            box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.2);
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            max-width: 600px;
+            width: 100%;
+        }
+
+        h1 {
+            color: #fff;
+            /* Change the color of the text to white to stand out against the background */
+            font-size: 2rem;
+            margin-bottom: 20px;
+            text-align: center;
+            text-transform: uppercase;
+        }
+
+        button {
+            background-color: #ffa500;
+            /* Use a bright orange color for the buttons to contrast with the background */
+            color: #fff;
+            font-size: 1.2rem;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 10px;
+            margin: 5px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+            transition: all 0.2s ease-in-out;
+        }
+
+
+        button:hover {
+            background-color: #fff;
+            color: #ffa500;
+            box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.4);
+            transform: translateY(-2px);
+        }
+
+        button:first-child {
+            margin-right: 50px;
+        }
+
+        .bottom-text {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 1rem;
+            color: #ffffff;
+            text-align: center;
+            text-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+            animation-name: fade-in;
+            animation-duration: 2s;
+            animation-timing-function: ease-out;
+            padding: 15px;
+            border-radius: 50px;
+            background-color: rgba(11, 11, 11, 0.7);
+            font-family: "Montserrat", sans-serif;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+
+        @keyframes fade-in {
+            0% {
+                opacity: 0;
+            }
+
+            100% {
+                opacity: 1;
+            }
+        }
+
+
+
+        span {
+            font-size: 100px;
         }
     </style>
 </head>
 
-<body background="wlcmbg.png">
-    <div class="welcome">Ready to make a lasting impression? Our online Resume builder
-        is here to help </div>
+<body>
+<div class="frame">
 
-    <p style="text-align: center; color: white;">
-        Are you an existing user? If yes, click on the login button. Otherwise,
-        click on the signup button
+    <p><span>&#129333;</span></p>
+    <button onclick="window.location.href='FindUser.html'">Find your account</button>
+    <button onclick="window.location.href='CreateUser.html'">Sign up</button>
+</div>
+<div class="bottom-text">
+    <p>Craft your career path with ease - Build your resume with us
     </p>
+</div>
 
-
-    <div class="button-container">
-        <button onclick="window.location.href='FindUser.html'">Find your account</button>
-        <button onclick="window.location.href='CreateUser.html'">Sign up</button>
-    </div>
 </body>
 
 </html>
