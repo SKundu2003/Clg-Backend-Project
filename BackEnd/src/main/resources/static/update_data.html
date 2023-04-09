@@ -110,7 +110,7 @@
 
         function fetchData() {
             // display the user input on the page
-            fetch(`http://localhost:8080/json/user/${userData}`)
+            fetch(`http://20.242.30.136:8080/json/user/${userData}`)
                 .then(response => response.json())
                 .then(data => {
                     document.getElementById('name').value = data.name;
@@ -172,7 +172,7 @@
                 console.log(AllDetailsOfUser);
 
                 // Send data to API endpoint
-                fetch(`http://localhost:8080/update/${email}`, {
+                fetch(`http://20.242.30.136:8080/update/${email}`, {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json'
@@ -193,7 +193,7 @@
             }
         }
         function goBackToMainView(){
-            window.location.href=`http://localhost:8080/user/${userData}`;
+            window.location.href=`http://20.242.30.136:8080/user/${userData}`;
         }
     </script>
 

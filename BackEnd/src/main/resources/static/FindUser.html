@@ -1,24 +1,156 @@
 <html>
 
 <head>
-    <title>Find Your Resume</title>
+
+    <title>Access point</title>
+    <style>
+        /* CSS for Find Your Resume page */
+
+        /* Body Styles */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f7f7f7;
+        }
+
+        /* Header Styles */
+        h1 {
+            font-size: 36px;
+            text-align: left;
+            margin-top: 50px;
+            margin-bottom: 20px;
+        }
+
+        /* Label Styles */
+        label {
+            font-size: 18px;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        /* Input Styles */
+        input[type="text"] {
+            font-size: 16px;
+            padding: 5px 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            width: 250px;
+            /* decrease the width */
+            display: block;
+            /* make the input a block element */
+            margin: 0 auto;
+            /* center the input */
+        }
+
+        /* Button Styles */
+        button {
+            font-size: 16px;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+            width: 200px;
+            /* increase the width */
+            display: block;
+            /* make the button a block element */
+            margin: 0 auto;
+            /* center the button */
+        }
+
+        button:before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 0;
+            height: 0;
+            background-color: rgba(255, 255, 255, 0.2);
+            border-radius: 100%;
+            z-index: -1;
+            transition: all 0.5s ease;
+        }
+
+        button:hover:before {
+            width: 200%;
+            height: 200%;
+        }
+
+        button:hover {
+            background-color: #0069d9;
+            color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+            transform: scale(1.1);
+        }
+
+        .container {
+            text-align: center;
+            /* center the button */
+        }
+
+        /* Result Styles */
+        #result {
+            font-size: 18px;
+            margin-top: 20px;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+            display: none;
+        }
+
+        /* Background Animation */
+        body:before {
+            content: "";
+            background: radial-gradient(#4f4f4f, #1a1a1a);
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            z-index: -1;
+            top: 0;
+            left: 0;
+            animation: pulse 5s linear infinite;
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+                opacity: 1;
+            }
+            100% {
+                transform: scale(1.2);
+                opacity: 0;
+            }
+        }
+    </style>
+
 </head>
 
 <body>
-    <h1>Find your Account::</h1>
-    <label for="inputString">Enter your email:</label>
-    <input type="text" id="inputString"><br><br>
-    <button onclick="sendData()">Find</button><br><br>
-    <div id="result"></div>
+<h1>Find your Account:</h1>
+<center>
+    <label for="inputString">
+        <h2>Enter your email:</h2>
+    </label>
+</center>
+<input type="text" id="inputString"><br><br>
+<button onclick="sendData()">Find Resume</button><br><br>
+<div id="result" class="result"></div>
 
     <script>
         function sendData(){
             let email = document.getElementById("inputString").value;
-            window.location.href = `http://localhost:8080/user/${email}`;
+            window.location.href = `http://20.242.30.136:8080/user/${email}`;
             //storing the data inside the local storage
             localStorage.setItem("userData",email);
         }
     </script>
 </body>
-
+z
 </html>
