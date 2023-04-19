@@ -37,7 +37,7 @@ public class SecuityConfigurations extends WebSecurityConfigurerAdapter {
                 .antMatchers("/update/**").permitAll()
                 .and()
                 .formLogin()//to show the default login window
-                .defaultSuccessUrl("http://20.242.30.136:8080/update_data.html",true)
+                .defaultSuccessUrl("http://localhost:8080/update_data.html",true)
                 .permitAll()
                 .and()
                 .logout().permitAll();

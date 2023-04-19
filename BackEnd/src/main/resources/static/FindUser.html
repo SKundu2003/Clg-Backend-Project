@@ -146,7 +146,7 @@
     <script>
         function sendData(){
             let email = document.getElementById("inputString").value;
-            window.location.href = `http://20.242.30.136:8080/user/${email}`;
+            window.location.href = `/user/${email}`;
             //storing the data inside the local storage
             localStorage.setItem("userData",email);
         }
