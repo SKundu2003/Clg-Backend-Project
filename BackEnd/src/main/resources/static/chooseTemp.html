@@ -1,0 +1,99 @@
+<html>
+
+<head>
+    <title>My Web Page</title>
+    <style>
+        body {
+            background: linear-gradient(to bottom, #cef32b, #f0eaea);
+            color: white;
+            font-family: 'Helvetica Neue', sans-serif;
+            line-height: 1.5;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            /* modify the flex-direction property */
+            align-items: center;
+        }
+
+        img {
+            width: 600px;
+            /* increase the image size */
+            height: 360px;
+            /* increase the image size */
+            margin: 20px;
+            object-fit: cover;
+            border-radius: 5px;
+            box-shadow: 0px 0px 10px 0px #888888;
+            transition: transform 0.3s ease-in-out;
+            /* add animation effect */
+        }
+
+        img:hover {
+            transform: scale(1.1);
+            /* add animation effect */
+        }
+
+        button {
+            background-color: #111111;
+            border: none;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 10px;
+            cursor: pointer;
+            border-radius: 5px;
+            box-shadow: 0px 0px 10px 0px #888888;
+        }
+
+        button:hover {
+            background-color: #dd0c8d;
+            box-shadow: 0px 0px 15px 0px #888888;
+        }
+
+        button:active {
+            background-color: #367c39;
+            box-shadow: 0px 0px 20px 0px #888888;
+        }
+
+        h1 {
+            font-size: 36px;
+            font-weight: bold;
+            text-align: center;
+            text-shadow: 2px 2px 5px #888888;
+            margin-top: 50px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Choose your template</h1>
+    <div class="container">
+        <img src="template1.jpg" alt="Image 1">
+        <button onclick="goToTemplate1()">Try it</button>
+        <img src="template2.jpg" alt="Image 2">
+        <button onclick="goToTemplate2()">Try it</button>
+        <img src="template3.jpg" alt="Image 3">
+        <button onclick="goToTemplate3()">Try it</button>
+
+        <script>
+            let value = localStorage.getItem("userData");
+            function goToTemplate1() {
+                window.location.href = `/user/${value}`;
+            }
+            function goToTemplate2() {
+                window.location.href = `/user/mv2/${value}`;
+            }
+            function goToTemplate3() {
+                window.location.href = `/user/mv3/${value}`;
+            }
+        </script>
+    </div>
+    <h2>hello</h2>
+</body>
+
+</html>

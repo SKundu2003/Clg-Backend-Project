@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+  <title>Frame 1</title>
+  <style>
+    .container {
+      display: flex;
+      justify-content: center;
+      height: 10vh;
+    }
+
+    button {
+      background-color: #9e4caf;
+      border: none;
+      color: white;
+      padding: 20px 30px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      margin: 6;
+      transition-duration: 0.4s;
+      cursor: pointer;
+      border-radius: 16px;
+      box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.3);
+    }
+
+    button:hover {
+      background-color: #0d0e0d;
+      box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.6);
+    }
+
+    button:active {
+      background-color: #3e8e41;
+      box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.4);
+      transform: translateY(2px);
+    }
+  </style>
+</head>
+
+<body>
+  <h2 id="job-role">Based on your first skill</h2>
+  <h2>
+    <p align="center">Your matches are</p>
+  </h2>
+  <div>
+    <button onclick="findJob1()">Job 1</button>
+    <button onclick="findJob2()">Job 2</button>
+    <button onclick="findJob3()">Job 3</button>
+  </div>
+  <script>
+    // Retrieve the array from local storage
+    let arr = JSON.parse(localStorage.getItem("myArray"));
+    document.getElementById("job-role").innerHTML = "Based on your first skill " + arr[1];
+    let value2 = arr[1];
+
+    function findJob1() {
+      // console.log("window.location.href = `https://in.indeed.com/jobs?q=${value}`")
+      window.open(`https://in.indeed.com/jobs?q=${value2}`, '_blank');
+    }
+    function findJob2() {
+      // console.log("window.location.href = `https://in.indeed.com/jobs?q=${value}`")
+      window.open(`https://www.glassdoor.co.in/Job/${value2}`, '_blank');
+    }
+    function findJob3() {
+      // console.log("window.location.href = `https://in.indeed.com/jobs?q=${value}`")
+      window.open(`https://www.simplyhired.co.in/search?q=${value2}`, '_blank');
+    }
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,154 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Resume - Souvik Kundu</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+
+        h1,
+        h2 {
+            margin: 0;
+        }
+
+        h1 {
+            font-size: 3em;
+            margin-top: 20px;
+        }
+
+        h2 {
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
+
+        .container {
+            margin: 20px;
+        }
+
+        .section {
+            margin-bottom: 30px;
+        }
+
+        .section-title {
+            font-size: 1.5em;
+            margin-bottom: 10px;
+        }
+
+        .item {
+            margin-bottom: 10px;
+        }
+
+        .item-title {
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1><span th:text="${user2.name}"></span></h1>
+        <h4><span th:text="${user2.about}">my about</span></h4>
+    </header>
+    <div class="container">
+        <section class="section">
+            <h3 class="section-title">Contact Information</h3>
+            <div class="item">
+                <span class="item-title">Email: <span th:text="${user2.email}"></span>
+            </div>
+            <div class="item">
+                <span class="item-title">Phone: <span th:text="${user2.number}"></span>
+            </div>
+            <div class="item">
+                <span class="item-title">Address: <span th:text="${user2.address}"></span>
+            </div>
+        </section>
+        <section class="section">
+            <h3 class="section-title">Summary</h3>
+            <p>
+                <span th:text="${user2.about}"></span>
+            </p>
+        </section>
+        <section class="section">
+            <h3 class="section-title">Experience</h3>
+            <div class="item">
+                <span class="item-title"><span th:text="${user2.experience1_title}"></span>
+                    <ul>
+                        <li><span th:text="${user2.about_experience1}"></span></li>
+                    </ul>
+            </div>
+            <div class="item">
+                <span class="item-title" th:text="${user2.experience2_title}"></span>
+                <ul>
+                    <li><span th:text="${user2.about_experience2}"></span></li>
+                </ul>
+        </section>
+
+        <section class="skills">
+            <h2>Skills</h2>
+            <h4>
+                <span th:text="${user2.skills}" id="stringInput">test</span>
+            </h4>
+        </section>
+
+        </main>
+        <button onclick="splitString()"
+            style="background-image: linear-gradient(to bottom, #f52828, #fd3d3d); border-radius: 20px; box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); color: #FFFFFF; font-weight: bold; font-size: 25px; transition: all 0.2s ease-in-out; text-transform: uppercase; letter-spacing: 2px; padding: 10px 20px;">
+            Find Jobs
+        </button>
+        <script>
+            function splitString() {
+                // Get the string input from the user
+                let input = document.getElementById("stringInput").innerHTML;
+                // Split the string by commas
+                let arr = input.split(",");
+                localStorage.setItem("myArray", JSON.stringify(arr));
+                sendToTest();
+                // Display the resulting array
+                // document.getElementById("result").innerHTML = JSON.stringify(arr);
+
+            }
+            function sendToTest() {
+                window.location.href = "/recomend.html";
+            }
+        </script>
+        <button style="
+          background-image: linear-gradient(to bottom, #eff30a, #eaecf0);
+          border: none;
+          border-radius: 25px;
+          box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+          color: #2c3e50;
+          font-weight: bold;
+          font-size: 16px;
+          padding: 10px 20px;
+          text-align: center;
+          text-decoration: none;
+          transition: all 0.2s ease-in-out;
+          cursor: pointer;
+          outline: none;
+        ">
+            <a href="/SendToLogin.html" style="color: inherit; text-decoration: none;">Update user info</a>
+        </button>
+        <button onclick="window.location.href=`/chooseTemp.html`" style="
+          background-image: linear-gradient(to bottom, #0982b3, #145af0);
+          border-radius: 10px;
+          color: #FFFFFF;
+          font-weight: bold;
+          font-size: 18px;
+          transition: all 0.2s ease-in-out;
+      ">
+            Change template
+        </button>
+</body>
+
+</html>
