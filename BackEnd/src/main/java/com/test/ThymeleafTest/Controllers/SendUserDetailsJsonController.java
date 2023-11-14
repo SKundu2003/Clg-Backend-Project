@@ -8,10 +8,13 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 @CrossOrigin(origins = "*",allowedHeaders = "*")
 public class SendUserDetailsJsonController {
-    @Autowired
-    UserReposetory userReposetory;
-    @GetMapping("/json/user/{email}")
-    public AllDetailsOfUser getDetailsInJson(@PathVariable String email){
-        return userReposetory.findByEmail(email);
-    }
+//    @Autowired
+//    UserReposetory userReposetory;
+//    @CrossOrigin
+//    @GetMapping("/json/user/{email}")
+//    @ResponseBody
+//    public AllDetailsOfUser getDetailsInJson(@PathVariable String email){
+//        System.err.println("email is "+email);
+//        return userReposetory.findByEmail(email);
+//    }
 }

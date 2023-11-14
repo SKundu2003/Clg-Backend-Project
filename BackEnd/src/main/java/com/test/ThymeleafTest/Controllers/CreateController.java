@@ -18,6 +18,7 @@ public class CreateController {
 
     @CrossOrigin
     @PostMapping("/createUser")
+    @ResponseBody
     public ResponseEntity<?> createNewUser(@RequestBody AllDetailsOfUser userDetails) {
         if (userReposetory.findByEmail(userDetails.getEmail()) != null) {
             // If user exists, return an error response

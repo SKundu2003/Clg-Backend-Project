@@ -1,5 +1,4 @@
 package com.test.ThymeleafTest.Modules;
-
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.Field;
@@ -13,9 +12,10 @@ import java.util.Collection;
 
 @Document
 public class AllDetailsOfUser implements UserDetails {
+    public String email;
+
     public String about;
     public String name;
-    public String email;
 
     public String number;
     public String address;
@@ -193,5 +193,23 @@ public class AllDetailsOfUser implements UserDetails {
         return true;
     }
 
+    @Override
+    public String toString() {
+        return "AllDetailsOfUser{" +
+                "about='" + about + '\'' +
+                ", name='" + name + '\'' +
+                ", email='" + email + '\'' +
+                ", number='" + number + '\'' +
+                ", address='" + address + '\'' +
+                ", education_school1='" + education_school1 + '\'' +
+                ", education_school2='" + education_school2 + '\'' +
+                ", experience1_title='" + experience1_title + '\'' +
+                ", about_experience1='" + about_experience1 + '\'' +
+                ", experience2_title='" + experience2_title + '\'' +
+                ", about_experience2='" + about_experience2 + '\'' +
+                ", skills='" + skills + '\'' +
+                ", password='" + password + '\'' +
+                '}';
+    }
 
 }
